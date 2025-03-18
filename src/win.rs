@@ -586,10 +586,6 @@ mod imp {
                 let obj = self.obj();
                 obj.add_css_class("devel");
             }
-            if cfg!(target_os = "macos") {
-                let obj = self.obj();
-                obj.add_css_class("macos");
-            }
 
             self.init_settings();
 
