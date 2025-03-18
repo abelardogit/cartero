@@ -92,7 +92,11 @@ mod imp {
             self.parent_startup();
             gtk::Window::set_default_icon_name(APP_ID);
 
-            if cfg!(target_os = "macos") {
+            if cfg!(target_os = "windows") {
+                if let Some(settings) = gtk::Settings::default() {
+                    settings.set_gtk_font_name(Some("Segoe UI 10"));
+                }
+            } else if cfg!(target_os = "macos") {
                 if let Some(settings) = gtk::Settings::default() {
                     settings.set_gtk_font_name(Some(".AppleSystemUIFont 14"));
                 }

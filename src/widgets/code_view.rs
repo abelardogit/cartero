@@ -325,7 +325,7 @@ fn get_monospace_font_descriptor() -> FontDescription {
         if cfg!(target_os = "macos") {
             "Menlo 14".to_string()
         } else if cfg!(target_os = "windows") {
-            "Consolas 10".to_string()
+            "Consolas 11".to_string()
         } else {
             let settings = gtk::gio::Settings::new("org.gnome.desktop.interface");
             settings.get::<String>("monospace-font-name")
